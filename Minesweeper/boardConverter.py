@@ -12,7 +12,10 @@ errors = 0
 
 def getCode(rgb, column, row):
     for code in cellTypes:
-        if rgb == colors[code]:
+        sum = 0
+        for i in range(0, 3):
+            sum += abs(rgb[i] - colors[code][i])
+        if sum < 25:
             if int(code) > 10:
                 return int(code[0])
             else:
@@ -20,8 +23,8 @@ def getCode(rgb, column, row):
 
     global errors
     errors += 1
-    #cellScreenshot('errors/'+str(errors)+'.png', column, row)
-    sys.exit("FINISHED")
+    #cellScreenshot('errors-'+str(errors)+'.png', column, row)
+    sys.exit("FINISHED - Couldn't determine detected number. ")
 
 
 def getBoardArray():
