@@ -23,7 +23,7 @@ def getCode(rgb, column, row):
 
     global errors
     errors += 1
-    #cellScreenshot('errors-'+str(errors)+'.png', column, row)
+    cellScreenshot('errors-'+str(errors)+'.png', column, row)
     sys.exit("FINISHED - Couldn't determine detected number. ")
 
 
